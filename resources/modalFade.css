@@ -271,7 +271,7 @@ li {
     padding-bottom: 0.2em;
     margin-right: 0.5em;
     vertical-align: bottom;
-    color: transparent;
+    color: #fff !important;
     transition: .2s;
 }
 

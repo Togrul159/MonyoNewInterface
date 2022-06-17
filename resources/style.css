@@ -262,6 +262,10 @@ body {
     color: #FF5C03;
 }
 
+#Info .social a svg {
+    color: #FF5C03;
+}
+
 #Info .social a:hover {
     background-color: #FF5C03;
 }
@@ -289,6 +293,10 @@ body {
 }
 
 #Info .social a:hover i {
+    color: #000;
+}
+
+#Info .social a:hover svg {
     color: #000;
 }
 
@@ -580,10 +588,26 @@ s {
     display: block;
 }
 
+#Instagram .btn-close {
+    top: 20px;
+    right: 20px;
+    position: absolute;
+    width: 1em;
+    z-index: 344534;
+    height: 1em;
+    padding: 0.25em 0.25em;
+    color: #fff;
+    background: url('https://api.iconify.design/ant-design/close-outlined.svg?color=white&width=22&height=22') no-repeat center center / contain;
+    border: 0;
+    border-radius: 0.25rem;
+    opacity: 1;
+}
+
 #Instagram .slide {
     display: grid;
     height: 90vh;
     width: 100%;
+    position: relative;
 }
 
 #Instagram .slide-items {
