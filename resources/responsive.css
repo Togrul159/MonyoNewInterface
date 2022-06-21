@@ -108,6 +108,9 @@
         justify-content: center;
         flex-direction: column;
     }
+    .adress .dropdown {
+        margin-left: -10px;
+    }
     #Info .social button {
         margin: 0 5px;
         background-color: #000;
@@ -153,6 +156,9 @@
         margin: 0;
         padding: 0;
     }
+    #carouselExampleIndicators {
+        display: block !important;
+    }
 }
 
 @media only screen and (max-width:438px) {
@@ -161,6 +167,9 @@
         border: none;
         color: #fff;
         font-size: 12px !important;
+    }
+    #carouselExampleIndicators {
+        display: block !important;
     }
     #Info .services .borderServices {
         border-top: 0.2px dashed #00000040;

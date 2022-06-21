@@ -3,6 +3,18 @@ body {
     padding: 0;
 }
 
+hr:not([size]) {
+    height: 0.5px;
+}
+
+hr {
+    margin: 10px 0 !important;
+    color: inherit;
+    background-color: #E5E5E5;
+    border: 0;
+    opacity: .25;
+}
+
 
 /* Header Start */
 
@@ -330,7 +342,7 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
-    overflow-y: visible;
+    overflow-y: hidden;
     -ms-overflow-style: none;
     scrollbar-width: none;
     -webkit-touch-callout: none;
@@ -355,7 +367,6 @@ body {
     flex-shrink: 0;
     min-width: 100px;
     margin: 10px;
-    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -373,7 +384,6 @@ nav.nav-horizontal-scroll {
     color: #FF5C03;
     cursor: pointer;
     border-bottom: 1px solid #FF5C03;
-    padding-bottom: 12px !important;
 }
 
 span {
@@ -683,4 +693,89 @@ s {
 #Instagram .modal-content {
     background-color: transparent !important;
     border: none !important;
+}
+
+.sticky {
+    position: fixed;
+    transition: 1s ease;
+    top: 0;
+}
+
+.FilterMenu {
+    width: 100%;
+    height: auto;
+    /* position: fixed; */
+    z-index: 1245;
+    top: 0;
+    background: #fff;
+    padding: 5px 0;
+}
+
+.FilterMenu .TopFilter {
+    padding: 13px 0 23px 0;
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: auto;
+    border-bottom: none !important;
+}
+
+.FilterMenu ul {
+    padding: 3px 0 15px 0;
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: auto;
+    border-bottom: none !important;
+}
+
+.FilterMenu ul li {
+    display: block;
+    margin: 0 10px;
+}
+
+.FilterMenu ul li a {
+    margin: 0 0 10px 0;
+    background: #E6E6E6;
+    padding: 5px 20px;
+    border-radius: 20px;
+    color: #333030;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.FilterMenu .TopFilter li a {
+    margin: 0 0 10px 0;
+    background: #E6E6E6;
+    padding: 16px 20px;
+    border-radius: 16px;
+    color: #333030;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.FilterMenu ul li a:hover {
+    color: #34495E;
+}
+
+a.active {
+    background-color: #000 !important;
+    border-radius: 20px;
+    color: #fff !important;
+}
+
+.FilterMenu .s section:nth-child(odd) {
+    background: #bdc3c7;
 }
