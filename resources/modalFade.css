@@ -302,6 +302,29 @@ li {
     height: 100px;
 }
 
+.aditionals .basketBtn {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+}
+
+.aditionals .basketBtn button {
+    background: #FF0000;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    display: flex;
+    font-weight: 500;
+    align-items: center;
+    font-size: 18px;
+}
+
+.aditionals .basketBtn button img {
+    margin-right: 6px;
+}
+
 .control-group {
     display: inline-block;
     vertical-align: top;
