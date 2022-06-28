@@ -1,10 +1,58 @@
-// Fixed Menu
+$(document).ready(function() {
+    $('.minus').click(function() {
+        var $input = $(this).parent().find('input');
+        var count = parseInt($input.val()) - 1;
+        count = count < 1 ? 1 : count;
+        $input.val(count);
+        $input.change();
+        return false;
+    });
+    $('.plus').click(function() {
+        var $input = $(this).parent().find('input');
+        $input.val(parseInt($input.val()) + 1);
+        $input.change();
+        return false;
+    });
+});
+
+// DAtetime
+if (/Mobi/.test(navigator.userAgent)) {
+    // if mobile device, use native pickers
+    $(".date-time input").attr("type", "datetime-local");
+    $(".date input").attr("type", "date");
+    $(".time input").attr("type", "time");
+} else {
+    // if desktop device, use DateTimePicker
+    $("#datetimepicker").datetimepicker({
+        icons: {
+            time: "fa fa-clock-o",
+            date: "fa fa-calendar",
+            up: "fa fa-chevron-up",
+            down: "fa fa-chevron-down",
+            next: "fa fa-chevron-right",
+            previous: "fa fa-chevron-left"
+        }
+    });
+    $("#datepicker").datetimepicker({
+        format: "L",
+        icons: {
+            next: "fa fa-chevron-right",
+            previous: "fa fa-chevron-left"
+        }
+    });
+    $("#timepicker").datetimepicker({
+        format: "LT",
+        icons: {
+            up: "fa fa-chevron-up",
+            down: "fa fa-chevron-down"
+        }
+    });
+}
+
+//   dateTime
 
 
 
-
-
-// Fixed Menu
 
 
 // let filter = document.querySelector(".FilterMenu")
