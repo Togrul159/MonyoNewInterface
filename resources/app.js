@@ -1,3 +1,43 @@
+const filter = document.getElementById("f-data")
+const sectionScroll = document.getElementById('f-scroll')
+
+console.log(filter)
+console.log(sectionScroll)
+
+
+
+
+const scrolled = sectionScroll.getBoundingClientRect()
+
+window.addEventListener('scroll', function(e) {
+    if (window.scrollY > 600) filter.classList.add('sticky')
+    else filter.classList.remove('sticky')
+})
+
+
+
+$(document).ready(function() {
+    function avt() {
+        $(".avt-item:checked + .avt-lbl div").css(
+            "background-color",
+            $(".avtBg-item:checked").val()
+        );
+    }
+    $(".avtBg-item").click(function() {
+        avt();
+    });
+    $(".avt-item").click(function() {
+        $(".bgCol").slideDown(500);
+        avt();
+    });
+});
+
+
+
+
+
+
+
 $(document).ready(function() {
     $('.minus').click(function() {
         var $input = $(this).parent().find('input');
@@ -16,38 +56,7 @@ $(document).ready(function() {
 });
 
 // DAtetime
-if (/Mobi/.test(navigator.userAgent)) {
-    // if mobile device, use native pickers
-    $(".date-time input").attr("type", "datetime-local");
-    $(".date input").attr("type", "date");
-    $(".time input").attr("type", "time");
-} else {
-    // if desktop device, use DateTimePicker
-    $("#datetimepicker").datetimepicker({
-        icons: {
-            time: "fa fa-clock-o",
-            date: "fa fa-calendar",
-            up: "fa fa-chevron-up",
-            down: "fa fa-chevron-down",
-            next: "fa fa-chevron-right",
-            previous: "fa fa-chevron-left"
-        }
-    });
-    $("#datepicker").datetimepicker({
-        format: "L",
-        icons: {
-            next: "fa fa-chevron-right",
-            previous: "fa fa-chevron-left"
-        }
-    });
-    $("#timepicker").datetimepicker({
-        format: "LT",
-        icons: {
-            up: "fa fa-chevron-up",
-            down: "fa fa-chevron-down"
-        }
-    });
-}
+
 
 //   dateTime
 

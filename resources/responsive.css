@@ -27,6 +27,13 @@
         object-fit: cover;
         overflow: hidden;
     }
+    .intl-tel-input .country-list.dropup {
+        bottom: 100%;
+        display: flex !important;
+        margin-bottom: -1px;
+        overflow-x: auto !important;
+        flex-direction: column !important;
+    }
 }
 
 @media only screen and (max-width:768px) {

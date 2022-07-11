@@ -7,22 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/css/intlTelInput.css" rel="stylesheet" media="screen">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" -->
+    <!-- /> -->
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/css/intlTelInput.css" rel="stylesheet" media="screen"> -->
     <link rel="stylesheet" href="./resources/btDateTime.css">
     <link rel="stylesheet" href="./resources/responsive.css">
     <link rel="stylesheet" href="./resources/modalFade.css">
     <link rel="stylesheet" href="./resources/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/intlTelInput.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/intlTelInput.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/intlTelInput.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/utils.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/utils.js"></script> -->
 
     <title>Monyo | Restaurant</title>
 </head>
 
 <body>
+
 
     <!-- Header Start -->
 
@@ -742,9 +743,39 @@
                     </div>
                 </div>
                 <div class="col-11">
-                    <input id="phone" type="tel">
-                    <!-- <span id="valid-msg" class="hide">Valid</span>
-                    <span id="error-msg" class="hide">Invalid number</span> -->
+                    <div class="pn">
+                        <div class="pn-select" id="js_pn-select" style="--prefix-length: 3">
+                            <button class="pn-selected-prefix" aria-label="Select phonenumber prefix" id="js_trigger-dropdown" tabindex="1">
+                                <img class="pn-selected-prefix__flag" id="js_selected-flag" src="https://flagpedia.net/data/flags/icon/36x27/az.png" />
+                                <svg class="pn-selected-prefix__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#081626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg>
+                                </button>
+                            <div class="pn-input">
+                                <!-- <label class="pn-input__label">Phonenumber*</label> -->
+                                <div class="pn-input__container">
+                                    <input class="pn-input__prefix" value="+994" type="text" name="phonenumber-prefix" id="js_number-prefix" tabindex="-1" />
+                                    <input class="pn-input__phonenumber" id="js_input-phonenumber" type="tel" name="phonenumber" pattern="\d*" value="" placeholder=" " autocomplete="nope" required max="10" tabindex="0" />
+                                    <small class="pn-input__error">
+                                        This is not a valid phone number
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="pn-dropdown" id="js_dropdown">
+                                <div class="pn-search">
+                                    <svg class="pn-search__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#103155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                    </svg>
+                                    <input placeholder="Search for countries" class="pn-search__input search" type="search" id="js_search-input" autocomplete="nope" />
+                                </div>
+                                <ul class="pn-list list" id="js_list"></ul>
+                                <div class="pn-list-item pn-list-item--no-results" style="display: none" id="js_no-results-found">
+                                    No results found
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row textAreaBox mt-3">
@@ -759,10 +790,188 @@
                     </form>
                 </div>
             </div>
+            <div class="row my-3">
+                <div class="col-12">
+                    <div class="BtnBox">
+                        <button class="whiteBtn">Ləğv et</button>
+                        <button class="redBtn">Sifarişi təsdiqlə</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section id="four" class="page">
-        <h2>Four</h2>
+        <div class="container">
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div class="titleReviews">
+                        <h2>Bizi Dəyərləndir</h2>
+                        <span>Xidmətlərimiz haqqında geri dönüşləriniz bizim üçün çox önəmlidir!</span>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="ofTitle">
+                        <h3>Ofisiantı seç</h3>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-5 p-4">
+                        <div class="d-flex avt-hold">
+                            <input type="radio" class="avt-item" name="avt" id="avt1" value="">
+                            <label class="avt-lbl rounded-circle me-4" for="avt1">
+                          <div class="rounded-circle d-flex align-content-center justify-content-center">
+                            <img src="./resources/img/Ellipse 33.png" alt="">
+                          </div>
+                        </label>
+                            <input type="radio" class="avt-item" name="avt" id="avt2" role="checkbox" value="">
+                            <label class="avt-lbl rounded-circle me-4" for="avt2">
+                          <div class="rounded-circle d-flex align-content-center justify-content-center">
+                            <img src="./resources/img/Ellipse 33.png" alt="">
+                            
+                          </div>
+                        </label>
+                            <input type="radio" class="avt-item" name="avt" id="avt3" role="checkbox" value="">
+                            <label class="avt-lbl rounded-circle me-4" for="avt3">
+                          <div class="rounded-circle d-flex align-content-center justify-content-center">
+                            <img src="./resources/img/Ellipse 33.png" alt="">
+                            
+                          </div>
+                        </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="title">
+                        <h5><img src="./resources/img/ofiasantdeyerlendir.svg" alt=""> Ofisiantı dəyərləndir</h5>
+                    </div>
+                    <div class="GifBox row">
+                        <div class="col-2">
+                            <div class="box">
+                                <img src="./resources/img/gif1.gif" alt="">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="box">
+                                <img src="./resources/img/gif2.gif" alt="">
+                            </div>
+                        </div>
+                        <div class="col-2">
+
+                            <div class="box">
+                                <img src="./resources/img/gif3.gif" alt="">
+                            </div>
+                        </div>
+                        <div class="col-2">
+
+                            <div class="box">
+                                <img src="./resources/img/gif4.gif" alt="">
+                            </div>
+                        </div>
+                        <div class="col-2">
+
+                            <div class="box">
+                                <img src="./resources/img/gif5.gif" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12">
+                    <div class="title">
+                        <h5><img src="./resources/img/yemeyideyerlendir.svg" alt=""> Yeməyi dəyərləndir</h5>
+                    </div>
+                    <div class="GifBox row">
+                        <div class="col-2">
+                            <div class="box">
+                                <img src="./resources/img/gif1.gif" alt="">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="box">
+                                <img src="./resources/img/gif2.gif" alt="">
+                            </div>
+                        </div>
+                        <div class="col-2">
+
+                            <div class="box">
+                                <img src="./resources/img/gif3.gif" alt="">
+                            </div>
+                        </div>
+                        <div class="col-2">
+
+                            <div class="box">
+                                <img src="./resources/img/gif4.gif" alt="">
+                            </div>
+                        </div>
+                        <div class="col-2">
+
+                            <div class="box">
+                                <img src="./resources/img/gif5.gif" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12">
+                    <div class="textAreaInp">
+                        <label for="">Qeyd</label>
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="pn">
+                        <label for="">Nömrə</label>
+                        <div class="pn-select" id="js_pn-select" style="--prefix-length: 3">
+                            <button class="pn-selected-prefix" aria-label="Select phonenumber prefix" id="js_trigger-dropdown" tabindex="1">
+                                <img class="pn-selected-prefix__flag" id="js_selected-flag" src="https://flagpedia.net/data/flags/icon/36x27/az.png" />
+                                <svg class="pn-selected-prefix__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#081626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg>
+                                </button>
+                            <div class="pn-input">
+                                <!-- <label class="pn-input__label">Phonenumber*</label> -->
+                                <div class="pn-input__container">
+                                    <input class="pn-input__prefix" value="+994" type="text" name="phonenumber-prefix" id="js_number-prefix" tabindex="-1" />
+                                    <input class="pn-input__phonenumber" id="js_input-phonenumber" type="tel" name="phonenumber" pattern="\d*" value="" placeholder=" " autocomplete="nope" required max="10" tabindex="0" />
+                                    <small class="pn-input__error">
+                                        This is not a valid phone number
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="pn-dropdown" id="js_dropdown">
+                                <div class="pn-search">
+                                    <svg class="pn-search__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#103155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                    </svg>
+                                    <input placeholder="Search for countries" class="pn-search__input search" type="search" id="js_search-input" autocomplete="nope" />
+                                </div>
+                                <ul class="pn-list list" id="js_list"></ul>
+                                <div class="pn-list-item pn-list-item--no-results" style="display: none" id="js_no-results-found">
+                                    No results found
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-12">
+                    <div class="deyerBtn">
+                        <button class="redBtn"><i class="fas fa-star"></i> Dəyərləndir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     </div>
 
@@ -905,60 +1114,76 @@
         </div>
     </div>
 
-    <script>
-        var telInput = $("#phone"),
-            errorMsg = $("#error-msg"),
-            validMsg = $("#valid-msg");
 
-        // initialise plugin
-        telInput.intlTelInput({
+    <!-- Basket MEnu Monyo Start -->
+    <div id="fr" class="bottom-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+        <div id="asd">
+            <div class="center-bottom">
+                <button id="btn-bottom" class="btn-bottom"></button>
+            </div>
+            <div class="bottom-flex">
+                <div class="cart-image"><img src="./resources/img/akar-icons_cart.svg" alt="">
+                    <span><span id="basket-count">1</span> məhsul</span>
+                </div>
+                <div class="total-cost">
+                    <span id="basket-amount">xxx</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas offcanvas-bottom frf" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+        <div class="offcanvas-header">
+            <button id="basket-close" class="bt-cl" data-bs-dismiss="offcanvas" aria-label="Close"><img src="./resources/img/Rectangle 130 (2).svg" alt=""></button>
+        </div>
+        <div class="offcanvas-body small">
+            <div id="fr" class="">
+                <div id="fr" class="pad-1-em">
+                    <div id="asd">
+                        <div class="bottom-flex">
+                            <div class="cart-image"><img src="./resources/img/akar-icons_cart.svg" alt="">
+                                <span><span id="basket-count-2">1</span> məhsul</span>
+                            </div>
+                            <div class="total-cost">
+                                <span id="basket-amount-2">xxx</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            allowExtensions: true,
-            formatOnDisplay: true,
-            autoFormat: true,
-            autoHideDialCode: true,
-            autoPlaceholder: true,
-            defaultCountry: "auto",
-            ipinfoToken: "yolo",
+                <form action="" style="height: 100%">
+                    <div class="div1">
+                        <div class="div2">
+                            <div class="div3">
+                                <div id="basket-table" style="margin-top: -20px;">
+                                </div>
+                                <div class="outlet">
+                                    <div>
+                                        <p>Endirim</p>
+                                    </div>
+                                    <div><span style="font-weight: 400; font-size: 1.2em;">0</span><span style="font-weight: 400; font-size: 1.2em;"></span></div>
+                                </div>
+                                <div class="total">
+                                    <div>
+                                        <p>Toplam:</p>
+                                    </div>
+                                    <div><span id="basket-amount-3">xxx</span></div>
+                                </div>
+                                <div class="note">
+                                    <textarea name="note" id="note" placeholder="Qeydiniz"></textarea>
+                                </div>
+                                <div class="confirm">
+                                    <button id="checkout-submit" type="button" onclick="confirm_order()"><i class="fa fa-paper-plane" aria-hidden="true"></i> Sifarişi təsdiqlə</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Basket MEnu Monyo End -->
 
-            nationalMode: false,
-            numberType: "MOBILE",
-            //onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
-            preferredCountries: ['az', 'tr', 'ru', 'ge', 'en'],
-            preventInvalidNumbers: true,
-            separateDialCode: true,
-            initialCountry: "auto",
-            geoIpLookup: function(callback) {
-                $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-                    var countryCode = (resp && resp.country) ? resp.country : "";
-                    callback(countryCode);
-                });
-            },
-            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/utils.js"
-        });
 
-        var reset = function() {
-            telInput.removeClass("error");
-            errorMsg.addClass("hide");
-            validMsg.addClass("hide");
-        };
-
-        // on blur: validate
-        telInput.blur(function() {
-            reset();
-            if ($.trim(telInput.val())) {
-                if (telInput.intlTelInput("isValidNumber")) {
-                    validMsg.removeClass("hide");
-                } else {
-                    telInput.addClass("error");
-                    errorMsg.removeClass("hide");
-                }
-            }
-        });
-
-        // on keyup / change flag: reset
-        telInput.on("keyup change", reset);
-    </script>
 
     <script>
         class SlideStories {
@@ -1023,7 +1248,7 @@
 
         new SlideStories('slide');
     </script>
-    <script>
+    <!-- <script>
         try {
             fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", {
                 method: 'HEAD',
@@ -1055,15 +1280,16 @@
 
         ga('create', 'UA-46156385-1', 'cssscript.com');
         ga('send', 'pageview');
-    </script>
+    </script> -->
 
 
-    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="./resources/app.js"></script>
     <script src="./resources/scroll.js"></script>
+    <script src="./resources/app.js"></script>
 </body>
 
 </html>
